@@ -1,8 +1,9 @@
-import * as Ontology from 'ontology-dapi';
+import * as Ontology from '@ont-dev/ontology-dapi';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Asset } from './asset';
+import { FS } from './fs';
 import { Home } from './home';
 import { Message } from './message';
 import { Network } from './network';
@@ -20,6 +21,7 @@ const App: React.SFC<{}> = () => (
       <Route path="/smart-contract" exact={true} component={SmartContract} />
       <Route path="/message" exact={true} component={Message} />
       <Route path="/provider" exact={true} component={Provider} />
+      <Route path="/fs" exact={true} component={FS} />
     </>
   </BrowserRouter>
 );

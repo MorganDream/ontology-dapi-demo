@@ -1,5 +1,5 @@
+import { client, ParameterType } from '@ont-dev/ontology-dapi';
 import arrayMutators from 'final-form-arrays';
-import { client, ParameterType } from 'ontology-dapi';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
@@ -102,7 +102,7 @@ export const SmartContract: React.SFC<RouterProps> = (props) => {
     const author: string = values.author;
     const email: string = values.email;
     const description: string = values.description;
-    const needStorage: boolean = values.needStorage;
+    // const needStorage: boolean = values.needStorage;
     const gasPrice: number = Number(values.gasPrice);
     const gasLimit: number = Number(values.gasLimit);
 
@@ -114,7 +114,7 @@ export const SmartContract: React.SFC<RouterProps> = (props) => {
         author,
         email,
         description,
-        needStorage,
+        vmType: false,
         gasPrice,
         gasLimit
       });

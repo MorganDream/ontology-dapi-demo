@@ -1,5 +1,5 @@
 {
-  "name": "ontology-dapi-demo",
+  "name": "@ont-dev/ontology-dapi-demo",
   "author": "Matus Zamborsky",
   "version": "0.1.0",
   "license": "LGPL",
@@ -9,7 +9,7 @@
     "bignumber.js": "^7.2.1",
     "final-form": "^4.9.1",
     "final-form-arrays": "^1.1.0",
-    "ontology-dapi": "^0.4.6",
+    "@ont-dev/ontology-dapi": "^0.4.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-final-form": "^3.6.5",

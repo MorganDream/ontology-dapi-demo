@@ -1,4 +1,4 @@
-import { client } from 'ontology-dapi';
+import { client } from '@ont-dev/ontology-dapi';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
 import { RouterProps } from 'react-router';
