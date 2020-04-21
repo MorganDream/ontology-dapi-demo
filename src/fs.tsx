@@ -64,81 +64,81 @@ export const FS: React.SFC<RouterProps> = (props) => {
     }
   }
 
-  async function onRegisterNode(values: any) {
-    try {
-      const result = await client.api.fs!.node.register(values);
-      alert('onRegisterNode: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onRegisterNode Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onRegisterNode(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.node.register(values);
+  //     alert('onRegisterNode: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onRegisterNode Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onQueryNode(values: any) {
-    try {
-      const result = await client.api.fs!.node.query(values);
-      alert('onQueryNode: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onQueryNode Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onQueryNode(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.node.query(values);
+  //     alert('onQueryNode: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onQueryNode Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onUpdateNode(values: any) {
-    try {
-      const result = await client.api.fs!.node.update(values);
-      alert('onUpdateNode: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onUpdateNode Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onUpdateNode(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.node.update(values);
+  //     alert('onUpdateNode: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onUpdateNode Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onCancelNode() {
-    try {
-      const result = await client.api.fs!.node.cancel();
-      alert('onCancelNode: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onCancelNode Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onCancelNode() {
+  //   try {
+  //     const result = await client.api.fs!.node.cancel();
+  //     alert('onCancelNode: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onCancelNode Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onNodeDrawProfit() {
-    try {
-      const result = await client.api.fs!.node.drawProfit();
-      alert('onNodeDrawProfit: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onNodeDrawProfit Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onNodeDrawProfit() {
+  //   try {
+  //     const result = await client.api.fs!.node.drawProfit();
+  //     alert('onNodeDrawProfit: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onNodeDrawProfit Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onNodeFileProve(values: any) {
-    try {
-      const result = await client.api.fs!.node.fileProve(values);
-      alert('onNodeFileProve: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onNodeFileProve Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onNodeFileProve(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.node.fileProve(values);
+  //     alert('onNodeFileProve: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onNodeFileProve Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onFileReadProfitSettle(values: any) {
-    try {
-      const result = await client.api.fs!.fileReadProfitSettle({
-        fileReadSettleSlice: values
-      });
-      alert('onFileReadProfitSettle: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onFileReadProfitSettle Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onFileReadProfitSettle(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.fileReadProfitSettle({
+  //       fileReadSettleSlice: values
+  //     });
+  //     alert('onFileReadProfitSettle: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onFileReadProfitSettle Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onVerifyFileReadProfitSettleSlice(values: any) {
-    try {
-      const result = await client.api.fs!.verifyFileReadSettleSlice({
-        settleSlice: values
-      });
-      alert('onVerifyFileReadProfitSettleSlice: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onVerifyFileReadProfitSettleSlice Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onVerifyFileReadProfitSettleSlice(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.verifyFileReadSettleSlice({
+  //       settleSlice: values
+  //     });
+  //     alert('onVerifyFileReadProfitSettleSlice: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onVerifyFileReadProfitSettleSlice Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
   async function onGetNodeInfoList(values: any) {
     try {
@@ -305,19 +305,19 @@ export const FS: React.SFC<RouterProps> = (props) => {
           volume: 100,
           copyNumber: 2,
           pdpInterval: 600,
-          timeExpired: 100
+          timeExpired: new Date()
         }}
         onSubmit={onCreateSpace}
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <label >Volume</label>
+            <label >Volume(kb)</label>
             <Field name="volume" component="input" type="number"/>
             <label>Copy Number</label>
             <Field name="copyNumber" component="input" type="number"/>
-            <label>Pdp Interval</label>
+            <label>Pdp Interval(second)</label>
             <Field name="pdpInterval" component="input" type="number"/>
             <label>Time Expired</label>
-            <Field name="timeExpired" component="input" type="number"/>
+            <Field name="timeExpired" component="input" type="datetime-local"/>
 
             <br />
             <br />
@@ -335,7 +335,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
       <Form
         initialValues={{
           volume: 100,
-          timeExpired: 100
+          timeExpired: new Date()
         }}
         onSubmit={onUpdateSpace}
         render={({ handleSubmit }) => (
@@ -343,7 +343,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label >Volume</label>
             <Field name="volume" component="input" type="number"/>
             <label>Time Expired</label>
-            <Field name="timeExpired" component="input" type="number"/>
+            <Field name="timeExpired" component="input" type="datetime-local"/>
 
             <br />
             <br />
@@ -357,7 +357,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
       <button onClick={onGetSpace}>Get Space</button>
       <hr />
 
-      <h2>Node Register</h2>
+      {/* <h2>Node Register</h2>
       <Form
         initialValues={{
           volume: 100,
@@ -463,9 +463,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>File Read Profit Settle</h2>
+      {/* <h2>File Read Profit Settle</h2>
       <Form
         initialValues={{
           fileHash: 'abcde1',
@@ -500,9 +500,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Verify File Read Settle Slice</h2>
+      {/* <h2>Verify File Read Settle Slice</h2>
       <Form
         initialValues={{
           fileHash: 'abcde1',
@@ -537,7 +537,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
       <h2>Get Node Info</h2>
       <Form
@@ -692,7 +692,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
           copyNumber: 1,
           firstPdp: true,
           pdpInterval: 600,
-          timeExpired: 10,
+          timeExpired: new Date(),
           pdpParam: '12ac34',
           storageType: 1
         }}
@@ -705,16 +705,16 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="fileDesc" component="textarea"/>
             <label>File Block Count</label>
             <Field name="fileBlockCount" component="input" type="number"/>
-            <label>Real File Size</label>
+            <label>Real File Size(kb)</label>
             <Field name="realFileSize" component="input" type="number"/>
             <label>Copy Number</label>
             <Field name="copyNumber" component="input" type="number"/>
             <label>firstPdp</label>
             <Field name="firstPdp" component="input" type="checkbox"/>
-            <label>pdpInterval(at least 600)</label>
+            <label>pdpInterval(at least 600s)</label>
             <Field name="pdpInterval" component="input" type="number"/>
             <label>Time Expired</label>
-            <Field name="timeExpired" component="input" type="number"/>
+            <Field name="timeExpired" component="input" type="datetime-local"/>
             <label>Pdp Param</label>
             <Field name="pdpParam" component="textarea"/>
             <label>Storage Type</label>
