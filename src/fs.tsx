@@ -29,6 +29,8 @@ export const FS: React.SFC<RouterProps> = (props) => {
   }
 
   async function onCreateSpace(values: any) {
+    // tslint:disable-next-line: no-console
+    console.log(values);
     try {
       const result = await client.api.fs!.space.create(values);
       alert('onCreateSpace: ' + JSON.stringify(result));
@@ -311,11 +313,11 @@ export const FS: React.SFC<RouterProps> = (props) => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <label >Volume(kb)</label>
-            <Field name="volume" component="input" type="number"/>
+            <Field name="volume" component="input" type="number" parse={(value) => Number(value)}/>
             <label>Copy Number</label>
-            <Field name="copyNumber" component="input" type="number"/>
+            <Field name="copyNumber" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Pdp Interval(second)</label>
-            <Field name="pdpInterval" component="input" type="number"/>
+            <Field name="pdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
 
@@ -341,7 +343,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <label >Volume</label>
-            <Field name="volume" component="input" type="number"/>
+            <Field name="volume" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
 
@@ -369,11 +371,11 @@ export const FS: React.SFC<RouterProps> = (props) => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <label >Volume</label>
-            <Field name="volume" component="input" type="number"/>
+            <Field name="volume" component="input" type="number"  parse={(value) => Number(value)}/>
             <label >Service Time</label>
-            <Field name="serviceTime" component="input" type="number"/>
+            <Field name="serviceTime" component="input" type="number"  parse={(value) => Number(value)}/>
             <label >Volume</label>
-            <Field name="minPdpInterval" component="input" type="number"/>
+            <Field name="minPdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="nodeNetAddr" component="textarea" type="text"/>
 
@@ -416,11 +418,11 @@ export const FS: React.SFC<RouterProps> = (props) => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <label >Volume</label>
-            <Field name="volume" component="input" type="number"/>
+            <Field name="volume" component="input" type="number"  parse={(value) => Number(value)}/>
             <label >Service Time</label>
-            <Field name="serviceTime" component="input" type="number"/>
+            <Field name="serviceTime" component="input" type="number"  parse={(value) => Number(value)}/>
             <label >Volume</label>
-            <Field name="minPdpInterval" component="input" type="number"/>
+            <Field name="minPdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="nodeNetAddr" component="textarea" type="text"/>
 
@@ -455,7 +457,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label >Prove Data</label>
             <Field name="proveData" component="textarea" type="text"/>
             <label >Block Height</label>
-            <Field name="blockHeight" component="input" type="number"/>
+            <Field name="blockHeight" component="input" type="number"  parse={(value) => Number(value)}/>
 
             <br />
             <br />
@@ -486,9 +488,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label>Pay To</label>
             <Field name="payTo" component="textarea"/>
             <label>Slice ID</label>
-            <Field name="sliceId" component="input" type="number"/>
+            <Field name="sliceId" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Pledge Height</label>
-            <Field name="pledgeHeight" component="input" type="number"/>
+            <Field name="pledgeHeight" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Signature</label>
             <Field name="signature" component="textarea"/>
             <label>PublicKey</label>
@@ -523,9 +525,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label>Pay To</label>
             <Field name="payTo" component="textarea"/>
             <label>Slice ID</label>
-            <Field name="sliceId" component="input" type="number"/>
+            <Field name="sliceId" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Pledge Height</label>
-            <Field name="pledgeHeight" component="input" type="number"/>
+            <Field name="pledgeHeight" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Signature</label>
             <Field name="signature" component="textarea"/>
             <label>PublicKey</label>
@@ -567,7 +569,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <h4>Count</h4>
-            <Field name="count" component="input" type="number"/>
+            <Field name="count" component="input" type="number"  parse={(value) => Number(value)}/>
 
             <br />
             <br />
@@ -704,21 +706,21 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label>File Description</label>
             <Field name="fileDesc" component="textarea"/>
             <label>File Block Count</label>
-            <Field name="fileBlockCount" component="input" type="number"/>
+            <Field name="fileBlockCount" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Real File Size(kb)</label>
-            <Field name="realFileSize" component="input" type="number"/>
+            <Field name="realFileSize" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Copy Number</label>
-            <Field name="copyNumber" component="input" type="number"/>
+            <Field name="copyNumber" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>firstPdp</label>
             <Field name="firstPdp" component="input" type="checkbox"/>
             <label>pdpInterval(at least 600s)</label>
-            <Field name="pdpInterval" component="input" type="number"/>
+            <Field name="pdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
             <label>Pdp Param</label>
             <Field name="pdpParam" component="textarea"/>
             <label>Storage Type</label>
-            <Field name="storageType" component="input" type="number"/>
+            <Field name="storageType" component="input" type="number"  parse={(value) => Number(value)}/>
 
             <br />
             <br />
@@ -918,9 +920,11 @@ export const FS: React.SFC<RouterProps> = (props) => {
                     <label>Node Address</label>
                     <Field name={`${name}.nodeAddr`} component="textarea" />
                     <label>Max Read Block Number</label>
-                    <Field name={`${name}.maxReadBlockNum`} component="input" type="number" />
+                    <Field name={`${name}.maxReadBlockNum`}
+                      component="input" type="number"  parse={(value) => Number(value)} />
                     <label>Have Read Block Number</label>
-                    <Field name={`${name}.haveReadBlockNum`} component="input" type="number" />
+                    <Field name={`${name}.haveReadBlockNum`}
+                      component="input" type="number"  parse={(value) => Number(value)} />
                     <span onClick={() => fields.remove(index)} style={{ cursor: 'pointer' }}>
                       ❌
                     </span>
@@ -971,7 +975,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label>Prove Data</label>
             <Field name="proveData" component="textarea" />
             <label>Block Height</label>
-            <Field name="blockHeight" component="input" type="number"/>
+            <Field name="blockHeight" component="input" type="number"  parse={(value) => Number(value)}/>
 
             <br />
             <br />
@@ -1019,9 +1023,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <label>Pay To</label>
             <Field name="payTo" component="textarea" />
             <label>Slice ID</label>
-            <Field name="sliceId" component="input" type="number"/>
+            <Field name="sliceId" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Pledge Height</label>
-            <Field name="pledgeHeight" component="input" type="number" />
+            <Field name="pledgeHeight" component="input" type="number"  parse={(value) => Number(value)} />
 
             <br />
             <br />
