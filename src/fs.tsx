@@ -19,9 +19,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
 
   async function onStoreFile(values: any) {
     try {
-      const result = await client.api.fs!.storeFiles({
-        filesInfo: [values]
-      });
+      const result = await client.api.fs!.storeFiles(values);
       alert('onStoreFile: ' + JSON.stringify(result));
     } catch (e) {
       alert('onStoreFile Error: ' + JSON.stringify(e));
@@ -39,12 +37,12 @@ export const FS: React.SFC<RouterProps> = (props) => {
     }
   }
 
-  async function onDeleteSpace() {
+  async function onDeleteSpace(values: any) {
     try {
-      const result = await client.api.fs!.space.delete();
+      const result = await client.api.fs!.space.delete(values);
       alert('onDeleteSpace: ' + JSON.stringify(result));
     } catch (e) {
-      alert('onCreateSpace Error: ' + JSON.stringify(e));
+      alert('onDeleteSpace Error: ' + JSON.stringify(e));
     }
   }
 
@@ -151,140 +149,140 @@ export const FS: React.SFC<RouterProps> = (props) => {
     }
   }
 
-  async function onGetFileReadPledge(values: any) {
-    try {
-      const result = await client.api.fs!.getFileReadPledge(values);
-      alert('onGetFileReadPledge: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetFileReadPledge Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetFileReadPledge(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.getFileReadPledge(values);
+  //     alert('onGetFileReadPledge: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetFileReadPledge Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetFilePdpRecordList(values: any) {
-    try {
-      const result = await client.api.fs!.getFilePdpRecordList(values);
-      alert('onGetFilePdpRecordList: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetFilePdpRecordList Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetFilePdpRecordList(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.getFilePdpRecordList(values);
+  //     alert('onGetFilePdpRecordList: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetFilePdpRecordList Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetChallenge(values: any) {
-    try {
-      const result = await client.api.fs!.getChallenge(values);
-      alert('onGetChallenge: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetChallenge Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetChallenge(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.getChallenge(values);
+  //     alert('onGetChallenge: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetChallenge Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetFileChallengeList(values: any) {
-    try {
-      const result = await client.api.fs!.getFileChallengeList(values);
-      alert('onGetFileChallengeList: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetFileChallengeList Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetFileChallengeList(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.getFileChallengeList(values);
+  //     alert('onGetFileChallengeList: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetFileChallengeList Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetNodeChallengeList() {
-    try {
-      const result = await client.api.fs!.getNodeChallengeList();
-      alert('onGetNodeChallengeList: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetNodeChallengeList Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetNodeChallengeList() {
+  //   try {
+  //     const result = await client.api.fs!.getNodeChallengeList();
+  //     alert('onGetNodeChallengeList: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetNodeChallengeList Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetFileInfo(values: any) {
-    try {
-      const result = await client.api.fs!.getFileInfo(values);
-      alert('onGetFileInfo: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetFileInfo Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetFileInfo(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.getFileInfo(values);
+  //     alert('onGetFileInfo: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetFileInfo Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onGetFileList() {
-    try {
-      const result = await client.api.fs!.getFileList();
-      alert('onGetFileList: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onGetFileList Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onGetFileList() {
+  //   try {
+  //     const result = await client.api.fs!.getFileList();
+  //     alert('onGetFileList: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onGetFileList Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onChallenge(values: any) {
-    try {
-      const result = await client.api.fs!.chanllenge(values);
-      alert('onChallenge: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onChallenge Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onChallenge(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.chanllenge(values);
+  //     alert('onChallenge: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onChallenge Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onTransferFiles(values: any) {
-    try {
-      const result = await client.api.fs!.transferFiles(values);
-      alert('onTransferFiles: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onTransferFiles Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onTransferFiles(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.transferFiles(values);
+  //     alert('onTransferFiles: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onTransferFiles Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onRenewFiles(values: any) {
-    try {
-      const result = await client.api.fs!.renewFiles(values);
-      alert('onRenewFiles: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onRenewFiles Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onRenewFiles(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.renewFiles(values);
+  //     alert('onRenewFiles: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onRenewFiles Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onDeleteFiles(values: any) {
-    try {
-      const result = await client.api.fs!.deleteFiles(values);
-      alert('onDeleteFiles: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onDeleteFiles Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onDeleteFiles(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.deleteFiles(values);
+  //     alert('onDeleteFiles: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onDeleteFiles Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onFileReadPledge(values: any) {
-    try {
-      const result = await client.api.fs!.fileReadPledge(values);
-      alert('onFileReadPledge: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onFileReadPledge Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onFileReadPledge(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.fileReadPledge(values);
+  //     alert('onFileReadPledge: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onFileReadPledge Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onCancelFileRead(values: any) {
-    try {
-      const result = await client.api.fs!.cancelFileRead(values);
-      alert('onCancelFileRead: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onCancelFileRead Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onCancelFileRead(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.cancelFileRead(values);
+  //     alert('onCancelFileRead: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onCancelFileRead Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onResponse(values: any) {
-    try {
-      const result = await client.api.fs!.response(values);
-      alert('onResponse: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onResponse Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onResponse(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.response(values);
+  //     alert('onResponse: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onResponse Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
-  async function onJudge(values: any) {
-    try {
-      const result = await client.api.fs!.judge(values);
-      alert('onJudge: ' + JSON.stringify(result));
-    } catch (e) {
-      alert('onJudge Error: ' + JSON.stringify(e));
-    }
-  }
+  // async function onJudge(values: any) {
+  //   try {
+  //     const result = await client.api.fs!.judge(values);
+  //     alert('onJudge: ' + JSON.stringify(result));
+  //   } catch (e) {
+  //     alert('onJudge Error: ' + JSON.stringify(e));
+  //   }
+  // }
 
   async function onGenFileReadSettleSlice(values: any) {
     try {
@@ -307,7 +305,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           volume: 100,
           copyNumber: 2,
           pdpInterval: 600,
-          timeExpired: new Date()
+          timeExpired: new Date(),
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onCreateSpace}
         render={({ handleSubmit }) => (
@@ -320,6 +320,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="pdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -330,14 +334,34 @@ export const FS: React.SFC<RouterProps> = (props) => {
       <hr />
 
       <h2>Delete Space</h2>
-      <button onClick={onDeleteSpace}>Delete Space</button>
+      <Form
+        initialValues={{
+          gasPrice: '500',
+          gasLimit: '100000000'
+        }}
+        onSubmit={onDeleteSpace}
+        render={({ handleSubmit }) => (
+          <form onSubmit={handleSubmit}>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
+
+            <br />
+            <br />
+            <button type="submit">Delete Space</button>
+          </form>
+        )}
+      />
       <hr />
 
       <h2>Update Space</h2>
       <Form
         initialValues={{
           volume: 100,
-          timeExpired: new Date()
+          timeExpired: new Date(),
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onUpdateSpace}
         render={({ handleSubmit }) => (
@@ -346,6 +370,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="volume" component="input" type="number"  parse={(value) => Number(value)}/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -544,7 +572,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
       <h2>Get Node Info</h2>
       <Form
         initialValues={{
-          address: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns'
+          address: 'AYuPXGQiRuBBBBLPSaDYA8B4vuFENB4K4A'
         }}
         onSubmit={onGetNodeInfo}
         render={({ handleSubmit }) => (
@@ -579,7 +607,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
       />
       <hr />
 
-      <h2>Get File Read Pledge</h2>
+      {/* <h2>Get File Read Pledge</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef',
@@ -599,9 +627,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Get File pdp record list</h2>
+      {/* <h2>Get File pdp record list</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef'
@@ -618,9 +646,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Get Challenge</h2>
+      {/* <h2>Get Challenge</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef',
@@ -640,9 +668,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Get File Challenge List</h2>
+      {/* <h2>Get File Challenge List</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef'
@@ -659,13 +687,13 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Get Node Challenge List</h2>
+      {/* <h2>Get Node Challenge List</h2>
         <button onClick={onGetNodeChallengeList}>Get</button>
-      <hr />
+      <hr /> */}
 
-      <h2>Get File Info</h2>
+      {/* <h2>Get File Info</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef'
@@ -682,45 +710,93 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
       <h2>Store Files</h2>
       <Form
+        mutators={Object.assign({}, arrayMutators) as any}
         initialValues={{
-          fileHash: 'abcdef',
-          fileDesc: 'This is a test file',
-          fileBlockCount: 1,
-          realFileSize: 10,
-          copyNumber: 1,
-          firstPdp: true,
-          pdpInterval: 600,
-          timeExpired: new Date(),
-          pdpParam: '12ac34',
-          storageType: 1
+          filesInfo: [{
+            fileHash: 'abcdef',
+            fileDesc: 'This is a test file',
+            fileBlockCount: 1,
+            realFileSize: 10,
+            copyNumber: 1,
+            firstPdp: true,
+            pdpInterval: 600,
+            timeExpired: new Date(),
+            pdpParam: '12ac34',
+            storageType: 1
+          }],
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onStoreFile}
-        render={({ handleSubmit }) => (
+        render={({
+          form: {
+            mutators: { push }
+          },
+          handleSubmit
+        }) => (
           <form onSubmit={handleSubmit}>
-            <label>File Hash in Hex</label>
-            <Field name="fileHash" component="textarea"/>
-            <label>File Description</label>
-            <Field name="fileDesc" component="textarea"/>
-            <label>File Block Count</label>
-            <Field name="fileBlockCount" component="input" type="number"  parse={(value) => Number(value)}/>
-            <label>Real File Size(kb)</label>
-            <Field name="realFileSize" component="input" type="number"  parse={(value) => Number(value)}/>
-            <label>Copy Number</label>
-            <Field name="copyNumber" component="input" type="number"  parse={(value) => Number(value)}/>
-            <label>firstPdp</label>
-            <Field name="firstPdp" component="input" type="checkbox"/>
-            <label>pdpInterval(at least 600s)</label>
-            <Field name="pdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
-            <label>Time Expired</label>
-            <Field name="timeExpired" component="input" type="datetime-local"/>
-            <label>Pdp Param</label>
-            <Field name="pdpParam" component="textarea"/>
-            <label>Storage Type</label>
-            <Field name="storageType" component="input" type="number"  parse={(value) => Number(value)}/>
+            <h4>File Info Array</h4>
+            <button type="button" onClick={() => push('filesInfo',
+              {
+                fileHash: 'abcdef',
+                fileDesc: 'This is a test file',
+                fileBlockCount: 1,
+                realFileSize: 10,
+                copyNumber: 1,
+                firstPdp: true,
+                pdpInterval: 600,
+                timeExpired: new Date(),
+                pdpParam: '12ac34',
+                storageType: 1
+              }
+            )
+            }>
+              Add File Hashes to Delete
+            </button>
+            <FieldArray name="filesInfo">
+              {({ fields }) =>
+                fields.map((name, index) => (
+                  <div key={index}>
+                    <label>File Hash in Hex</label>
+                    <Field name={`${name}.fileHash`} component="textarea"/>
+                    <label>File Description</label>
+                    <Field name={`${name}.fileDesc`} component="textarea"/>
+                    <label>File Block Count</label>
+                    <Field name={`${name}.fileBlockCount`}
+                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <label>Real File Size(kb)</label>
+                    <Field name={`${name}.realFileSize`}
+                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <label>Copy Number</label>
+                    <Field name={`${name}.copyNumber`}
+                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <label>firstPdp</label>
+                    <Field name={`${name}.firstPdp`} component="input" type="checkbox"/>
+                    <label>pdpInterval(at least 600s)</label>
+                    <Field name={`${name}.pdpInterval`}
+                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <label>Time Expired</label>
+                    <Field name={`${name}.timeExpired`} component="input" type="datetime-local"/>
+                    <label>Pdp Param</label>
+                    <Field name={`${name}.pdpParam`} component="textarea"/>
+                    <label>Storage Type</label>
+                    <Field name={`${name}.storageType`}
+                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <span onClick={() => fields.remove(index)} style={{ cursor: 'pointer' }}>
+                      ❌
+                    </span>
+                  </div>
+                ))
+              }
+            </FieldArray>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -730,15 +806,17 @@ export const FS: React.SFC<RouterProps> = (props) => {
       />
       <hr />
 
-      <h2>Get File List</h2>
+      {/* <h2>Get File List</h2>
       <button onClick={onGetFileList}>Get</button>
-      <hr />
+      <hr /> */}
 
-      <h2>Challenge</h2>
+      {/* <h2>Challenge</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef',
-          nodeAddr: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns'
+          nodeAddr: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns',
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onChallenge}
         render={({ handleSubmit }) => (
@@ -747,6 +825,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="fileHash" component="textarea" />
             <label>Node Address</label>
             <Field name="nodeAddr" component="textarea" />
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -754,12 +836,14 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Delete Files</h2>
+      {/* <h2>Delete Files</h2>
       <Form
         initialValues={{
-          fileHashes: ['abcdef']
+          fileHashes: ['abcdef'],
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         mutators={Object.assign({}, arrayMutators) as any}
         onSubmit={onDeleteFiles}
@@ -787,6 +871,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
                 ))
               }
             </FieldArray>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -794,15 +882,17 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Transfer Files</h2>
+      {/* <h2>Transfer Files</h2>
       <Form
         initialValues={{
           fileTransfers: [{
             fileHash: 'abcdef',
             newOwner: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns'
-          }]
+          }],
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         mutators={Object.assign({}, arrayMutators) as any}
         onSubmit={onTransferFiles}
@@ -832,6 +922,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
                 ))
               }
             </FieldArray>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -839,15 +933,17 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Renew Files</h2>
+      {/* <h2>Renew Files</h2>
       <Form
         initialValues={{
           filesRenew: [{
             fileHash: 'abcdef',
             renewTime: 100
-          }]
+          }],
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         mutators={Object.assign({}, arrayMutators) as any}
         onSubmit={onRenewFiles}
@@ -877,6 +973,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
                 ))
               }
             </FieldArray>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -884,9 +984,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>File Read Pledge</h2>
+      {/* <h2>File Read Pledge</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef',
@@ -894,7 +994,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
             nodeAddr: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns',
             maxReadBlockNum: 1000,
             haveReadBlockNum: 10
-          }]
+          }],
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         mutators={Object.assign({}, arrayMutators) as any}
         onSubmit={onFileReadPledge}
@@ -932,6 +1034,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
                 ))
               }
             </FieldArray>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -939,18 +1045,24 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Cancel File Read</h2>
+      {/* <h2>Cancel File Read</h2>
       <Form
         initialValues={{
-          fileHash: 'abcdef'
+          fileHash: 'abcdef',
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onCancelFileRead}
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <label>File Hash Hex</label>
             <Field name="fileHash" component="textarea" />
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -958,14 +1070,16 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
-      <h2>Response</h2>
+      {/* <h2>Response</h2>
       <Form
         initialValues={{
           fileHash: 'abcdef',
           proveData: 'abcdef',
-          blockHeight: 100
+          blockHeight: 100,
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onResponse}
         render={({ handleSubmit }) => (
@@ -976,6 +1090,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="proveData" component="textarea" />
             <label>Block Height</label>
             <Field name="blockHeight" component="input" type="number"  parse={(value) => Number(value)}/>
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -989,7 +1107,9 @@ export const FS: React.SFC<RouterProps> = (props) => {
       <Form
         initialValues={{
           fileHash: 'abcdef',
-          nodeAddr: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns'
+          nodeAddr: 'AXCyYV4DNmmsqZn9qJEqHqpacVxcr7X7ns',
+          gasPrice: '500',
+          gasLimit: '100000000'
         }}
         onSubmit={onJudge}
         render={({ handleSubmit }) => (
@@ -998,6 +1118,10 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="fileHash" component="textarea" />
             <label>Node Address</label>
             <Field name="nodeAddr" component="textarea" />
+            <h4>Gas price</h4>
+            <Field name="gasPrice" component="input" type="number" />
+            <h4>Gas limit</h4>
+            <Field name="gasLimit" component="input" type="number" />
 
             <br />
             <br />
@@ -1005,7 +1129,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
           </form>
         )}
       />
-      <hr />
+      <hr /> */}
 
       <h2>Generate File Read Settle Slice</h2>
       <Form
