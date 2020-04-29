@@ -143,6 +143,8 @@ export const FS: React.SFC<RouterProps> = (props) => {
   async function onGetNodeInfoList(values: any) {
     try {
       const result = await client.api.fs!.getNodeInfoList(values);
+      // tslint:disable-next-line: no-console
+      console.log(result);
       alert('onGetNodeInfoList: ' + JSON.stringify(result));
     } catch (e) {
       alert('onGetNodeInfoList Error: ' + JSON.stringify(e));
@@ -304,7 +306,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
         initialValues={{
           volume: 100,
           copyNumber: 2,
-          pdpInterval: 600,
+          timeStart: new Date(),
           timeExpired: new Date(),
           gasPrice: '500',
           gasLimit: '100000000'
@@ -316,8 +318,8 @@ export const FS: React.SFC<RouterProps> = (props) => {
             <Field name="volume" component="input" type="number" parse={(value) => Number(value)}/>
             <label>Copy Number</label>
             <Field name="copyNumber" component="input" type="number"  parse={(value) => Number(value)}/>
-            <label>Pdp Interval(second)</label>
-            <Field name="pdpInterval" component="input" type="number"  parse={(value) => Number(value)}/>
+            <label>Time Start</label>
+            <Field name="timeStart" component="input" type="datetime-local"/>
             <label>Time Expired</label>
             <Field name="timeExpired" component="input" type="datetime-local"/>
             <h4>Gas price</h4>
@@ -723,7 +725,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
             realFileSize: 10,
             copyNumber: 1,
             firstPdp: true,
-            pdpInterval: 600,
+            timeStart: new Date(),
             timeExpired: new Date(),
             pdpParam: '12ac34',
             storageType: 1
@@ -748,7 +750,7 @@ export const FS: React.SFC<RouterProps> = (props) => {
                 realFileSize: 10,
                 copyNumber: 1,
                 firstPdp: true,
-                pdpInterval: 600,
+                timeStart: new Date(),
                 timeExpired: new Date(),
                 pdpParam: '12ac34',
                 storageType: 1
@@ -776,9 +778,8 @@ export const FS: React.SFC<RouterProps> = (props) => {
                       component="input" type="number"  parse={(value) => Number(value)}/>
                     <label>firstPdp</label>
                     <Field name={`${name}.firstPdp`} component="input" type="checkbox"/>
-                    <label>pdpInterval(at least 600s)</label>
-                    <Field name={`${name}.pdpInterval`}
-                      component="input" type="number"  parse={(value) => Number(value)}/>
+                    <label>Time Start</label>
+                    <Field name={`${name}.timeStart`} component="input" type="datetime-local"/>
                     <label>Time Expired</label>
                     <Field name={`${name}.timeExpired`} component="input" type="datetime-local"/>
                     <label>Pdp Param</label>
